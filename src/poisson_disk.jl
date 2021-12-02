@@ -46,8 +46,7 @@ function Poisson_disk_sampling(;width =1.0, height=1.0, radius=0.05, k=30)
         p, q = minimum([i+2, grid_rows]), minimum([j+2, grid_cols])
         for k in n:q
             for l in m:p
-                index = (k-1) * grid_rows +l
-                gpoint = grid[index]
+                gpoint = grid[(k-1) * grows + l]
                 if ismissing(gpoint)
                     continue
                 end
